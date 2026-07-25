@@ -18,7 +18,7 @@ Most "duration" packages do **one** of: parsing human strings, or formatting mil
 - **Zero dependencies.** No `luxon`, no `moment`, no `date-fns`. Drop the file in any Node project.
 - **Bidirectional but independent.** `parse` and `format` don't share state. You can swap one without the other.
 - **Calendar approximations are explicit.** `1mo` parses as a fixed 30-day month, `1y` as 365 days. `format()` will only emit calendar units when the value is a clean multiple — never `0.5y`.
-- **Strict input validation.** `1hrz` throws; `1.2.3h` throws; trailing garbage throws. The parser doesn't silently accept broken input — that's the most common bug in this category.
+- **Strict input validation.** `1hrz` throws `1.2.3h` throws trailing garbage throws. The parser doesn't silently accept broken input — that's the most common bug in this category.
 
 ## Install
 
@@ -26,7 +26,6 @@ Most "duration" packages do **one** of: parsing human strings, or formatting mil
 npm install @prasadaabhishek/span
 ```
 
-;
 
 ## CLI
 
@@ -41,20 +40,20 @@ span --help
 ## Library
 
 ```js
-const { parse, format } = require('span');
+const { parse, format } = require('span')
 
-parse('1h30m');                 // → 5400000
-parse('-1h30m');                // → -5400000  (sign applies to the whole duration, not per-term)
-parse('2 days 4h');             // → 172800000
-parse('1ms');                   // → 1
-parse('500ms');                 // → 500
-parse('1.5h');                  // → 5400000
+parse('1h30m')                 // → 5400000
+parse('-1h30m')                // → -5400000  (sign applies to the whole duration, not per-term)
+parse('2 days 4h')             // → 172800000
+parse('1ms')                   // → 1
+parse('500ms')                 // → 500
+parse('1.5h')                  // → 5400000
 
-format(5400000);                // → "1h30m"
-format(1500, { decimals: 1 });  // → "1.5s"
-format(86400000);               // → "1d"
-format(0);                      // → "0ms"
-format(365 * 86400 * 1000);     // → "1y"   (only when value is a clean multiple of the unit)
+format(5400000)                // → "1h30m"
+format(1500, { decimals: 1 })  // → "1.5s"
+format(86400000)               // → "1d"
+format(0)                      // → "0ms"
+format(365 * 86400 * 1000)     // → "1y"   (only when value is a clean multiple of the unit)
 ```
 
 ## Supported units
