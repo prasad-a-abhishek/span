@@ -1,7 +1,7 @@
 {
-  "name": "span",
+  "name": "@prasadaabhishek/span",
   "version": "1.0.0",
-  "description": "Tiny zero-dep human-duration parser and formatter. '1h30m' \u2194 5400000ms. Bidirectional, strict input validation, calendar approximations explicit.",
+  "description": "Tiny zero-dep human-duration parser and formatter. '1h30m' ↔ 5400000ms. Bidirectional, strict input validation, calendar approximations explicit.",
   "main": "index.js",
   "scripts": {
     "test": "node --test test/*.test.js"
