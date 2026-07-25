@@ -23,10 +23,10 @@ Most "duration" packages do **one** of: parsing human strings, or formatting mil
 ## Install
 
 ```bash
-npm install github:prasad-a-abhishek/span
+npm install @prasadaabhishek/span
 ```
 
-(Not on npm yet — install from the GitHub release tag.)
+;
 
 ## CLI
 
